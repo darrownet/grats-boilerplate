@@ -2,33 +2,30 @@ import React from 'react'
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag'
 
-type SampleQueryProps = {
-    query: string
-};
-
 interface Link {
     id: string;
     description: string;
 }
 
-interface Links {
-    links: Link[];
-}
+const SAMPLE_QUERY = gql`{
+    feed {
+        links {
+            id
+            description
+        }
+    }
+}`;
 
-interface Data {
-    feed: Links;
-}
+const SampleQuery = () => {
 
-const SampleQuery: React.FC<SampleQueryProps> = ({query}) => {
-
-    const { loading, error, data } = useQuery(gql(query));
+    const { loading, error, data } = useQuery(SAMPLE_QUERY);
 
     if (loading) return <p>Loading ...</p>;
 
     const links = (data && data.feed.links) || [];
 
     return (<ul>
-          {links.map((link: Link, idx:number) => {
+          {links.map((link:Link, idx:number) => {
               return (
                 <li key={idx}>
                     <span>{link.id}</span>

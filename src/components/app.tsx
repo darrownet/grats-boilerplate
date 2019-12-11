@@ -14,15 +14,6 @@ interface AppProps {
 
 const App = (props: AppProps) => {
 
-    const sampleQuery = `{
-                          feed {
-                            links {
-                              id
-                              description
-                            }
-                          }
-                        }`;
-
     const cache = new InMemoryCache();
     const link = new HttpLink({
         uri: 'http://localhost:4000/',
@@ -48,7 +39,7 @@ const App = (props: AppProps) => {
     return (
         <ApolloProvider client={client}>
             <h1>Hello from {props.compiler} and {props.framework}!</h1>
-            <SampleQuery query={sampleQuery}/>
+            <SampleQuery />
         </ApolloProvider>
     );
 };
