@@ -5,4 +5,4 @@ import App from "./components/app";
 
 const rootEl = document.getElementById("root");
 
-ReactDOM.render(<App compiler="TypeScript" framework="React" />, rootEl);
+ReactDOM.render(<App compiler="JavaScript" framework="React" />, rootEl);
