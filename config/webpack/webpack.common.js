@@ -3,15 +3,15 @@ const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   context: resolve(__dirname, '../../src'),
-  entry: ['./index.tsx', './styles/styles.scss'],
+  entry: ['./index.jsx', './styles/styles.scss'],
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
+    extensions: ['.js', '.jsx']
   },
   module: {
     rules: [
       {
-        test: /\.ts(x?)$/,
-        loaders: ['awesome-typescript-loader?tsconfig=../typescript/tsconfig.json'],
+        test: /\.(js|jsx)$/,
+        use: ['babel-loader'],
         exclude: /node_modules/
       },
       {

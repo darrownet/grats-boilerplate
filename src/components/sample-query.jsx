@@ -2,11 +2,6 @@ import React from 'react'
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag'
 
-interface Link {
-    id: string;
-    description: string;
-}
-
 const SAMPLE_QUERY = gql`{
     feed {
         links {
@@ -25,7 +20,7 @@ const SampleQuery = () => {
     const links = (data && data.feed.links) || [];
 
     return (<ul>
-          {links.map((link:Link, idx:number) => {
+          {links.map((link, idx) => {
               return (
                 <li key={idx}>
                     <span>{link.id}</span>

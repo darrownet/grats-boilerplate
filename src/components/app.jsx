@@ -7,12 +7,7 @@ import {ApolloProvider} from '@apollo/react-hooks';
 
 import SampleQuery from "./sample-query";
 
-interface AppProps {
-    compiler: string;
-    framework: string;
-}
-
-const App = (props: AppProps) => {
+const App = (props) => {
 
     const cache = new InMemoryCache();
     const link = new HttpLink({
