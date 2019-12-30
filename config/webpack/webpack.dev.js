@@ -8,10 +8,6 @@ module.exports = merge(common, {
   mode: 'development',
   target: "web",
   devtool: 'cheap-module-source-map',
-  entry: [
-    'react-hot-loader/patch',
-    'webpack/hot/only-dev-server'
-  ],
   devServer: {
     contentBase: resolve(__dirname, '../../src/client'),
     port: dotenv.parsed.DEV_PORT,
