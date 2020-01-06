@@ -1,6 +1,7 @@
 /**
  * @jest-environment node
  */
+import 'cross-fetch/polyfill';
 import React from 'react';
 import Enzyme from 'enzyme';
 import { render } from 'enzyme';
