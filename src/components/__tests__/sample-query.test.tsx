@@ -67,5 +67,4 @@ describe('The <SampleQuery /> component', () => {
     expect(links.length).toEqual(3);
   });
 
-
 });
