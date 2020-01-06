@@ -5,12 +5,14 @@ import gql from 'graphql-tag'
 interface Link {
     id: string;
     description: string;
+    url: string;
 }
 
 const SAMPLE_QUERY = gql`{
     feed {
         links {
             id
+            url
             description
         }
     }
@@ -31,6 +33,7 @@ const SampleQuery = () => {
                     <span>{link.id}</span>
                     <span> : </span>
                     <span>{link.description}</span>
+                    <div>{link.url}</div>
                 </li>
               );
           })}

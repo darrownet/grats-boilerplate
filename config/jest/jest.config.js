@@ -2,8 +2,8 @@ module.exports = {
   rootDir: "../../",
   coverageDirectory: "<rootDir>/tests/__coverage__/",
   collectCoverageFrom: [
-    "src/client/components/**/*.{js,jsx,ts,tsx}",
-    "src/client/core/**/*.{js,jsx,ts,tsx}",
+    "src/components/**/*.{js,jsx,ts,tsx}",
+    "src/core/**/*.{js,jsx,ts,tsx}",
     "!<rootDir>/node_modules/",
     "!<rootDir>/config/"
   ],
@@ -16,8 +16,8 @@ module.exports = {
     "<rootDir>/tests/__mocks__/shim.js"
   ],
   roots: [
-    "<rootDir>/src/client/components",
-    "<rootDir>/src/client/core",
+    "<rootDir>/src/components",
+    "<rootDir>/src/core",
     "<rootDir>/tests/"
   ],
   moduleNameMapper: {
