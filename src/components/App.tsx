@@ -5,7 +5,8 @@ import {InMemoryCache} from 'apollo-cache-inmemory';
 import {HttpLink} from 'apollo-link-http';
 import {ApolloProvider} from '@apollo/react-hooks';
 
-import SampleQuery from "./sample-query";
+import CreateLink from "./CreateLink";
+import Links from "./Links";
 
 interface AppProps {
   compiler: string;
@@ -39,7 +40,8 @@ const App = (props: AppProps) => {
   return (
     <ApolloProvider client={client}>
       <h1>Hello from {props.compiler} and {props.framework}!</h1>
-      <SampleQuery/>
+      <CreateLink />
+      <Links />
     </ApolloProvider>
   );
 };

@@ -1,6 +1,6 @@
 import gql from "graphql-tag";
 
-export const SAMPLE_QUERY = gql`{
+export const LINKS_QUERY = gql`{
     feed {
         links {
             id

@@ -4,23 +4,23 @@
 import 'jsdom-global/register';
 import React from 'react';
 import Enzyme from 'enzyme';
-import { render, shallow, mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 Enzyme.configure({adapter: new Adapter()});
 import {MockedProvider} from '@apollo/react-testing';
 
-import {SAMPLE_QUERY} from "../../graphql/queries";
-import SampleQuery from "../sample-query";
+import { LINKS_QUERY } from "../../core/graphql/queries";
+import Links from "../Links";
 
 const wait = require('waait');
 
-describe('The <SampleQuery /> component', () => {
+describe('The <Links /> component', () => {
 
   const mock = [
     {
       request: {
-        query: SAMPLE_QUERY
+        query: LINKS_QUERY
       },
       result: {
         data: {
@@ -39,7 +39,7 @@ describe('The <SampleQuery /> component', () => {
   it('should exist', () => {
     const component = shallow(
       <MockedProvider mocks={[]}>
-        <SampleQuery/>
+        <Links/>
       </MockedProvider>
     );
     expect(component).toBeDefined();
@@ -48,7 +48,7 @@ describe('The <SampleQuery /> component', () => {
   it('should render the correct loading view', async () => {
     const component = mount(
       <MockedProvider mocks={[]}>
-        <SampleQuery/>
+        <Links/>
       </MockedProvider>
     );
     const loading = component.find('p');
@@ -58,7 +58,7 @@ describe('The <SampleQuery /> component', () => {
   it('should display 3 information links based on the query result', async () => {
     const component = mount(
       <MockedProvider mocks={mock} addTypename={false}>
-        <SampleQuery />
+        <Links />
       </MockedProvider>
     );
     await wait(0);
